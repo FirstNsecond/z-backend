@@ -10,8 +10,6 @@ const APPOINTMENT = require('./Models/appointment.js')
 
 const SERVICE = require('./Models/service.js')
 
-require('dotenv').config();
-
 const app = express()
 
   const frontend=process.env.FRONTEND1 || "http://localhost:7000"
@@ -171,12 +169,15 @@ app.put('/removemessage', async (req, res) => {
     }
 })
 
-const selfcall=async()=>{
-let res=await axios.get(`${process.env.SELF_URI}/getservice`,{
-    withCredentials:true
-})
-return null;
-}
+const selfcall = async () => {
+    try {
+        let res = await axios.get(`${process.env.SELF_URI}/getservice`, {
+            withCredentials: true,
+        });
+    } catch (error) {
+        console.error("Error in selfcall:", error);
+    }
+};
 
 setInterval(() => {
     selfcall()

@@ -181,7 +181,7 @@ const selfcall = async () => {
 
 setInterval(() => {
     selfcall()
-}, 5*60*1000);
+}, 10*60*1000);
 
 app.listen((PORT), () => {
     console.log(`Client app listening at port ${PORT}`)

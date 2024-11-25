@@ -14,7 +14,7 @@ const app = express()
 
   const frontend=process.env.FRONTEND1 || "http://localhost:7000"
   const admin=process.env.FRONTEND2 || "http://localhost:10000"
-  const self=process.env.SELF_URI || "http://localhost:3000"
+  const self=process.env.SELF_URI || "http://localhost:4000"
 
 const PORT = process.env.PORT || 3000 ;
 app.use(cors({

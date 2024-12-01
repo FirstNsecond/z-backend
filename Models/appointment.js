@@ -6,6 +6,7 @@ let appointmentschema=new mongoose.Schema({
     age:String,
     address:String,
     phone:Number,
+    check:{type:Boolean,default:false}
 
 })
 
